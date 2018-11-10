@@ -50,6 +50,9 @@ catkin_package(
 # TODO: Check names of system library include directories (genmsg, gencpp, genpy)
 include_directories(${CATKIN_INCLUDE_DIRS})
 
+# we need to add this since CPATH was removed since kinetic, see https://github.com/ros/catkin/pull/783
+include_directories(${pb_msgs_INCLUDE_DIRS})
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/pb_msgs_example.cpp
